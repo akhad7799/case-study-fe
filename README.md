@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# Email Synchronization Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This frontend application is used to interact with the Email Synchronization Backend. It allows users to authenticate with Outlook, synchronize emails, and view the synchronization progress in real-time.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- OAuth2 authentication with Outlook.
+- Initiate email synchronization.
+- View synchronization progress in real-time.
 
-### `npm start`
+## Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Node.js
+- npm
+- Email Synchronization Backend
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+1. **Clone the repository:**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```bash
+   git clone <repository-url>
+   cd <repository-directory>
 
-### `npm run build`
+2. **Install dependencies:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    ```bash
+   npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. **Set up environment variables:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    _Create a .env file in the root directory and add the following variables:_
 
-### `npm run eject`
+    ```bash
+   REACT_APP_API_BASE_URL=http://localhost:3000/api
+   PORT=5000
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. **Running the Application**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   _Start the frontend application:_
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```bash
+   npm start
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+5. **The application will be running on the configured port (default is 5000).***
 
-## Learn More
+## Building for Production
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Build the application:**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   ```bash
+   npm run build
+   ```
 
-### Code Splitting
+**The production-ready build files will be in the build directory.**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Application Structure
+_The application consists of several components and uses React Router for navigation._
 
-### Analyzing the Bundle Size
+**Components**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+* **AddAccount**: Allows users to add an Outlook account.
+* **EmailList**: Displays the list of synchronized emails.
+* **SyncStatus**: Shows the synchronization status and allows users to initiate synchronization.
+* **NavBar**: Navigation bar for switching between components.
 
-### Making a Progressive Web App
+## Example Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+**Authenticate with Outlook:**
 
-### Advanced Configuration
+1. Open your browser and navigate to http://localhost:5000.
+2. Click the "Add Account" button to authenticate with Outlook.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+**Synchronize Emails:**
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Navigate to the "Sync Status" page.
+2. Click the "Sync Emails" button to initiate email synchronization.
